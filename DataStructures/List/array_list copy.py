@@ -106,5 +106,27 @@ def sub_list(lst, start_index, end_index):
         return new_lst
     return None
 
+def cmp_function(element1, element2):
+    if element1 == element2:
+        return 0
+    elif element1 < element2:
+        return -1
+    else:
+        return 1
+
+def selection_sort(lst):
+    n = lst["size"] - 1
+    for i in range(n):
+        min_index = i
+        for j in range(i + 1, n):
+            if not cmp_function(lst["elements"][j], lst["elements"][min_index]):
+                min_index = j
+        if min_index != i:
+            exchange(lst, i, min_index)
+            
+    return lst
+
+        
+
 
     
