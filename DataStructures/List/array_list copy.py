@@ -106,5 +106,18 @@ def sub_list(lst, start_index, end_index):
         return new_lst
     return None
 
+def insertion_sort(lst, cmp_function):
+    size = lst["size"]
+    for i in range(1, size):
+        key = lst["elements"][i]
+        j = i - 1
+        while j >= 0 and cmp_function(lst["elements"][j], key) > 0:
+            lst["elements"][j + 1] = lst["elements"][j]
+            j -= 1
+        lst["elements"][j + 1] = key
+    return lst
+
+
+
 
     
