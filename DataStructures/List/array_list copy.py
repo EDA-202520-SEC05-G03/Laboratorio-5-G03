@@ -106,5 +106,20 @@ def sub_list(lst, start_index, end_index):
         return new_lst
     return None
 
-
-    
+def shell_sort(lst,cmp_function):
+    n = lst["size"]
+    if n < 2:
+        return lst
+    array = lst["elements"]
+    espacio = n // 2
+        while espacio > 0:
+             for i in range(espacio, n):
+                act = arr[i]
+                j = i
+                while j >= espacio and cmp_function(array[j - espacio], act) > 0:
+                    array[j] = array[j - gap]
+                    j -= gap
+                array[j] = temp
+            espacio //= 2
+            
+    return lst

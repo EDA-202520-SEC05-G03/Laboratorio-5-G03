@@ -105,3 +105,55 @@ def sub_list(my_list, start_pos, end_pos):
             add_last(new_lst, my_list["elements"][i])
         return new_lst
     return None  
+def shell_sort(my_list, cmp_function):
+    n = my_list["size"]
+    if n < 2:
+        return my_list
+
+    espacio = n // 2
+    while espacio > 0:
+        for s in range(gespacio):
+            i = s + espacio
+            while i < n:
+                # temp = valor en posición i
+                node = my_list["first"]
+                k = 0
+                while k < i and node is not None:
+                    node = node["next"]
+                    k += 1
+                act = node["info"]
+
+                j = i
+                seguir = True
+                while seguir and (j - espacio) >= s:
+                    node_prev = my_list["first"]
+                    k = 0
+                    t = j - gap
+                    while k < t and node_prev is not None:
+                        node_prev = node_prev["next"]
+                        k += 1
+                    val_prev = node_prev["info"]
+
+                    if cmp_function(val_prev, act) > 0:
+                        node_j = my_list["first"]
+                        k = 0
+                        while k < j and node_j is not None:
+                            node_j = node_j["next"]
+                            k += 1
+                        node_j["info"] = val_prev
+                        j -= espacio
+                    else:
+                        seguir = False  
+
+                
+                node_j = my_list["first"]
+                k = 0
+                while k < j and node_j is not None:
+                    node_j = node_j["next"]
+                    k += 1
+                node_j["info"] = act
+
+                i += espacio
+        espacio //= 2
+
+    return my_list
